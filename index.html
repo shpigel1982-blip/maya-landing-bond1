@@ -8,6 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Rubik:wght@500;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','944247124783076');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=944247124783076&ev=PageView&noscript=1"/></noscript>
 <style>
   :root{
     --ivory:#FBF7F0;
@@ -418,6 +424,82 @@
   .disclaimer p{color:rgba(254,251,242,.7);margin-bottom:1em}
   .disclaimer .fineprint{font-size:12.5px;color:rgba(254,251,242,.5);margin-top:24px;padding-top:20px;border-top:1px solid rgba(230,212,174,.18)}
 
+  /* ——————— Testimonials ——————— */
+  .testimonials{background:var(--gold-mist);padding:110px 0}
+  .testimonials h2{text-align:center;margin-bottom:16px;font-size:clamp(26px,3.6vw,38px);line-height:1.2}
+  .testimonials .section-lead{margin-bottom:60px}
+  .testimonial-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+    max-width:1100px;margin:0 auto;padding:0 32px;
+  }
+  .testimonial{
+    background:var(--cream);border-radius:10px;padding:44px 30px 32px;
+    border:1px solid var(--line);position:relative;box-shadow:var(--shadow-sm);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .testimonial:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .testimonial::before{
+    content:'"';position:absolute;top:-8px;right:22px;
+    font-family:'Frank Ruhl Libre',serif;font-size:88px;color:var(--gold);line-height:1;
+    opacity:.45;
+  }
+  .testimonial p{
+    font-family:'Frank Ruhl Libre',serif;font-size:19px;line-height:1.65;
+    color:var(--brown);font-weight:500;margin-bottom:24px;position:relative;z-index:1;
+  }
+  .testimonial .who{
+    font-family:'Rubik',sans-serif;font-size:12px;color:var(--gold);
+    letter-spacing:.22em;text-transform:uppercase;font-weight:700;
+    padding-top:18px;border-top:1px solid var(--line);
+  }
+  @media (max-width:860px){.testimonial-grid{grid-template-columns:1fr;gap:20px}}
+
+  /* ——————— Exit-intent popup ——————— */
+  .exit-popup{
+    position:fixed;inset:0;z-index:9999;display:none;
+    align-items:center;justify-content:center;padding:20px;
+    background:rgba(26,14,8,0.68);backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  .exit-popup.open{display:flex;animation:exitFade .35s ease}
+  @keyframes exitFade{from{opacity:0}to{opacity:1}}
+  .exit-card{
+    background:var(--cream);max-width:520px;width:100%;border-radius:16px;
+    padding:44px 38px 32px;position:relative;
+    box-shadow:0 30px 90px rgba(0,0,0,0.45);
+    max-height:92vh;overflow-y:auto;
+    animation:exitSlide .4s ease;
+  }
+  @keyframes exitSlide{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+  .exit-close{
+    position:absolute;top:12px;left:12px;width:38px;height:38px;
+    border:none;background:transparent;cursor:pointer;color:var(--taupe);
+    font-size:26px;line-height:1;border-radius:50%;transition:background .2s,color .2s;
+  }
+  .exit-close:hover{background:var(--line);color:var(--ink)}
+  .exit-eyebrow{
+    font-family:'Rubik',sans-serif;font-weight:700;color:var(--gold);
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;
+  }
+  .exit-card h3{
+    font-family:'Rubik',sans-serif;font-weight:800;color:var(--ink);
+    font-size:24px;line-height:1.3;margin-bottom:14px;letter-spacing:-0.01em;
+  }
+  .exit-card > p{color:var(--brown);font-size:16px;line-height:1.7;margin-bottom:22px}
+  .exit-form{border-radius:6px;overflow:hidden;border:1px solid var(--line);background:#fff}
+  .exit-form iframe{width:100%;height:440px;border:none;background:transparent;display:block}
+  .no-thanks{
+    display:block;text-align:center;margin:14px auto 0;color:var(--taupe);
+    font-size:13px;text-decoration:underline;cursor:pointer;background:none;
+    border:none;font-family:'Heebo',sans-serif;padding:6px 12px;
+  }
+  .no-thanks:hover{color:var(--ink)}
+  @media (max-width:620px){
+    .exit-card{padding:36px 24px 28px}
+    .exit-card h3{font-size:20px}
+    .exit-form iframe{height:480px}
+  }
+
   /* ——————— Print-safe animations ——————— */
   @media (prefers-reduced-motion: no-preference){
     .fade-up{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease}
@@ -662,6 +744,28 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2>מה נשים שהשתמשו בטכניקות מספרות</h2>
+    <p class="section-lead">קולות אמיתיים מנשים שעברו את התהליך</p>
+    <div class="testimonial-grid">
+      <div class="testimonial fade-up">
+        <p>אני מרגישה פחות מוצפת. אני רגועה מעצם זה שיש מה לעשות וזה זמין לי.</p>
+        <div class="who">אם, בת 31</div>
+      </div>
+      <div class="testimonial fade-up">
+        <p>אני סוף סוף יודעת מה לעשות כדי להירדם מהר.</p>
+        <div class="who">אם, בת 42</div>
+      </div>
+      <div class="testimonial fade-up">
+        <p>אני פתאום מבינה מה אני מרגישה בכלל, אז זה פתאום פחות מפעיל אותי.</p>
+        <div class="who">אם, בת 28</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="pricing" id="register-main">
   <div class="pricing-intro">
@@ -822,6 +926,20 @@
   </div>
 </footer>
 
+<!-- EXIT-INTENT POPUP -->
+<div class="exit-popup" id="exitPopup" role="dialog" aria-modal="true" aria-labelledby="exitTitle">
+  <div class="exit-card">
+    <button class="exit-close" id="exitClose" aria-label="סגירה">&times;</button>
+    <div class="exit-eyebrow">רגע, לפני שאת סוגרת</div>
+    <h3 id="exitTitle">יש לי במתנה בשבילך מדריך על איך מעבדים לידה מורכבת</h3>
+    <p>השאירי את הפרטים ואשלח לך אותו למייל בדקות הקרובות.</p>
+    <div class="exit-form">
+      <iframe data-src="https://ravpage.co.il/378f482857940bf56bd29fd5877dcb9d69DBB9E7" title="הרשמה למדריך חינמי"></iframe>
+    </div>
+    <button class="no-thanks" id="exitNoThanks">לא תודה</button>
+  </div>
+</div>
+
 <script>
   // sticky CTA appears after hero
   const topCta = document.getElementById('topCta');
@@ -840,6 +958,55 @@
     }, {threshold:0.15});
     document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
   }
+
+  // Exit-intent popup
+  (function(){
+    const STORAGE_KEY = 'bond1_exit_seen_v1';
+    const MIN_DWELL_MS = 15000;
+    const popup = document.getElementById('exitPopup');
+    const closeBtn = document.getElementById('exitClose');
+    const noBtn = document.getElementById('exitNoThanks');
+    const iframe = popup.querySelector('iframe');
+    let armed = false, shown = false;
+
+    try { if (localStorage.getItem(STORAGE_KEY)) return; } catch(e){}
+
+    setTimeout(() => { armed = true; }, MIN_DWELL_MS);
+
+    function show(){
+      if (shown || !armed) return;
+      shown = true;
+      if (iframe.dataset.src && !iframe.src) iframe.src = iframe.dataset.src;
+      popup.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch(e){}
+      if (window.fbq) { try { fbq('trackCustom','ExitIntentPopupShown'); } catch(e){} }
+    }
+    function hide(){
+      popup.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Desktop: mouse leaves top edge
+    document.addEventListener('mouseout', (e) => {
+      if (e.relatedTarget || e.toElement) return;
+      if (e.clientY <= 0) show();
+    });
+
+    // Mobile: back button
+    try { history.pushState({exitGuard:true}, ''); } catch(e){}
+    window.addEventListener('popstate', () => {
+      if (!shown && armed) {
+        show();
+        try { history.pushState({exitGuard:true}, ''); } catch(e){}
+      }
+    });
+
+    closeBtn.addEventListener('click', hide);
+    noBtn.addEventListener('click', hide);
+    popup.addEventListener('click', (e) => { if (e.target === popup) hide(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && popup.classList.contains('open')) hide(); });
+  })();
 </script>
 
 </body>
