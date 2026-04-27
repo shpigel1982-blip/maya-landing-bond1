@@ -504,6 +504,171 @@ fbq('init','944247124783076');fbq('track','PageView');
     .exit-close{top:8px;left:8px;width:40px;height:40px;font-size:28px}
   }
 
+  /* ——————— Closeness app section ——————— */
+  .app-spotlight{
+    background:linear-gradient(180deg,var(--ivory) 0%, var(--gold-mist) 35%, var(--gold-mist) 65%, var(--ivory) 100%);
+    padding:120px 0;position:relative;overflow:hidden;
+  }
+  .app-spotlight::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(191,152,87,0.10),transparent 55%);
+    pointer-events:none;
+  }
+  .app-spotlight .container{position:relative;z-index:2}
+  .app-eyebrow{
+    display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px;
+  }
+  .app-eyebrow .dot{width:8px;height:8px;background:var(--gold);border-radius:50%;box-shadow:0 0 12px var(--gold)}
+  .app-eyebrow span{
+    font-family:'Rubik',sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  }
+  .app-spotlight h2{
+    font-size:clamp(32px,4.5vw,52px);text-align:center;margin:0 auto 22px;
+    max-width:880px;line-height:1.18;
+  }
+  .app-spotlight h2 em{
+    font-family:'Frank Ruhl Libre',serif;font-style:italic;font-weight:500;color:var(--gold);
+  }
+  .app-spotlight .lead{
+    text-align:center;max-width:720px;margin:0 auto 70px;padding:0 24px;
+    font-size:clamp(20px,1.75vw,23px);color:var(--brown);line-height:1.85;
+  }
+  .app-spotlight .lead .emph{
+    font-family:'Frank Ruhl Libre',serif;font-style:italic;color:var(--ink);font-weight:500;
+  }
+
+  .app-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+    max-width:1100px;margin:0 auto 70px;padding:0 32px;
+  }
+  .app-mockup{
+    position:relative;display:flex;justify-content:center;align-items:center;
+    padding:30px 0;
+  }
+  .phone{
+    width:300px;height:600px;border-radius:42px;background:var(--ink);
+    padding:14px;box-shadow:
+      0 30px 80px -20px rgba(42,30,20,0.55),
+      0 12px 30px -8px rgba(42,30,20,0.35),
+      inset 0 0 0 2px rgba(230,212,174,0.15);
+    position:relative;
+  }
+  .phone::before{
+    content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);
+    width:90px;height:22px;background:#0a0604;border-radius:14px;z-index:3;
+  }
+  .phone-screen{
+    width:100%;height:100%;background:#FBF5EA;border-radius:30px;
+    overflow:hidden;position:relative;display:flex;flex-direction:column;
+    padding:46px 22px 22px;
+  }
+  .phone-screen .app-name{
+    font-family:'Rubik',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;
+    color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:8px;
+  }
+  .phone-screen .app-title{
+    font-family:'Frank Ruhl Libre',serif;font-size:22px;font-weight:500;color:var(--ink);
+    text-align:center;line-height:1.25;margin-bottom:20px;
+  }
+  .phone-screen .stage{
+    background:#fff;border:1px solid rgba(228,218,203,.7);border-radius:14px;
+    padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start;
+    box-shadow:0 4px 16px -8px rgba(59,42,24,0.18);
+  }
+  .phone-screen .stage-num{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--gold-mist);
+    color:var(--brown);display:grid;place-items:center;
+    font-family:'Frank Ruhl Libre',serif;font-size:18px;font-weight:500;
+  }
+  .phone-screen .stage-body strong{
+    display:block;font-family:'Rubik',sans-serif;font-weight:700;font-size:13px;
+    color:var(--ink);margin-bottom:3px;letter-spacing:-.005em;
+  }
+  .phone-screen .stage-body span{font-size:11px;color:var(--taupe);line-height:1.4;display:block}
+  .phone-screen .mic-bar{
+    margin-top:auto;background:var(--gold);color:var(--ink);border-radius:999px;
+    padding:11px 14px;font-family:'Rubik',sans-serif;font-weight:700;font-size:12px;
+    text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;
+    letter-spacing:.04em;
+  }
+  .phone-screen .mic-bar::before{
+    content:'';width:8px;height:8px;background:var(--ink);border-radius:50%;
+    box-shadow:0 0 0 4px rgba(42,30,20,0.18);
+  }
+
+  .app-content h3{
+    font-size:clamp(24px,2.5vw,30px);margin-bottom:22px;line-height:1.3;color:var(--ink);
+  }
+  .app-content p{
+    color:var(--brown);font-size:clamp(20px,1.7vw,22px);line-height:1.8;margin-bottom:1em;
+  }
+  .app-features{
+    margin-top:32px;display:grid;gap:18px;
+  }
+  .app-feature{
+    background:var(--cream);border:1px solid var(--line);border-radius:8px;
+    padding:22px 24px;display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:flex-start;
+    box-shadow:var(--shadow-sm);
+  }
+  .app-feature .num{
+    font-family:'Frank Ruhl Libre',serif;font-size:38px;font-weight:500;color:var(--gold);
+    line-height:1;
+  }
+  .app-feature h4{font-size:clamp(18px,1.6vw,20px);margin-bottom:6px;color:var(--ink);font-weight:700;line-height:1.3}
+  .app-feature p{font-size:clamp(18px,1.5vw,20px);color:var(--taupe);line-height:1.65;margin:0}
+  .app-feature p strong{color:var(--brown);font-weight:600}
+
+  .app-pullquote{
+    max-width:820px;margin:30px auto 60px;padding:0 32px;text-align:center;
+    font-family:'Frank Ruhl Libre',serif;font-size:clamp(24px,3.1vw,34px);
+    font-weight:500;line-height:1.45;color:var(--brown);font-style:italic;
+  }
+  .app-pullquote em{color:var(--gold);font-style:normal;font-weight:500}
+
+  .app-callout{
+    max-width:780px;margin:0 auto 50px;padding:38px 42px;
+    background:var(--cream);border:1px solid var(--line);border-radius:10px;
+    border-right:3px solid var(--gold);box-shadow:var(--shadow-sm);
+  }
+  .app-callout h4{
+    font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(20px,1.85vw,24px);
+    color:var(--ink);margin-bottom:18px;line-height:1.3;
+  }
+  .app-callout ul{list-style:none;padding:0;margin:0}
+  .app-callout li{
+    padding:10px 0 10px 0;font-size:clamp(19px,1.6vw,21px);color:var(--brown);
+    line-height:1.7;display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:flex-start;
+  }
+  .app-callout li::before{
+    content:'';width:8px;height:8px;background:var(--gold);border-radius:50%;
+    margin-top:11px;
+  }
+
+  .app-included{
+    text-align:center;max-width:680px;margin:0 auto 30px;padding:0 24px;
+  }
+  .app-included .tag{
+    display:inline-block;background:var(--brown);color:var(--gold-soft);
+    font-family:'Rubik',sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;
+    padding:8px 18px;border-radius:999px;text-transform:uppercase;margin-bottom:20px;
+  }
+  .app-included p{
+    font-family:'Frank Ruhl Libre',serif;font-size:clamp(22px,2.1vw,26px);
+    color:var(--ink);font-weight:500;line-height:1.55;font-style:italic;
+  }
+  .app-cta-wrap{text-align:center;margin-top:28px}
+
+  @media (max-width:860px){
+    .app-spotlight{padding:90px 0}
+    .app-grid{grid-template-columns:1fr;gap:50px}
+    .app-mockup{order:1}
+    .app-content{order:2}
+    .phone{width:260px;height:520px}
+    .phone-screen{padding:40px 18px 18px}
+    .app-callout{padding:30px 26px}
+  }
+
   /* ——————— Print-safe animations ——————— */
   @media (prefers-reduced-motion: no-preference){
     .fade-up{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease}
@@ -744,6 +909,101 @@ fbq('init','944247124783076');fbq('track','PageView');
           <p>ללמוד את הרציונל לעיבוד לידה, ההכנה לקראת העיבוד, ואת כל השלבים על מנת לחזור לעצמי רגשית אחרי הלידה.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSENESS APP SPOTLIGHT -->
+<section class="app-spotlight">
+  <div class="container">
+    <div class="app-eyebrow">
+      <span class="dot"></span><span>חדש בתוכנית · אפליקציית התרגול האישית שלך</span><span class="dot"></span>
+    </div>
+    <h2>כי הקרבה לא נבנית בצפייה.<br><em>היא נבנית בעשייה.</em></h2>
+    <p class="lead">את יכולה לראות את כל השיעורים. להבין כל מילה. להזדהות עם כל סצנה. ובכל זאת, ב-3 בלילה כשהתינוק בוכה ואת מחזיקה אותו, יד אחת על הכתף, יד שנייה על הבקבוק, את לא תזכרי בדיוק איך עושים סנכרון נשימה. ולא תפתחי עכשיו וידאו של 12 דקות.<br><br><span class="emph">זה הפער בין ללמוד לבין לדעת לעשות. וזה בדיוק הפער שסוגרת לך אפליקציית "חיבור מחוזק לתינוק".</span></p>
+
+    <div class="app-grid">
+      <div class="app-mockup fade-up">
+        <div class="phone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="app-name">חיבור מחוזק לתינוק</div>
+            <div class="app-title">בחרי שלב להתחיל</div>
+            <div class="stage">
+              <div class="stage-num">1</div>
+              <div class="stage-body">
+                <strong>לראות ולדבר</strong>
+                <span>4 תרגילים · 2 עד 4 דקות לתרגיל</span>
+              </div>
+            </div>
+            <div class="stage">
+              <div class="stage-num">2</div>
+              <div class="stage-body">
+                <strong>חיבור גופני</strong>
+                <span>4 תרגילים · מגע, נשימה, סנכרון</span>
+              </div>
+            </div>
+            <div class="stage">
+              <div class="stage-num">3</div>
+              <div class="stage-body">
+                <strong>רגעים שהיומיום נותן</strong>
+                <span>5 תרגילים · בוקר, רחצה, שינה</span>
+              </div>
+            </div>
+            <div class="mic-bar">דברי במקום להקליד</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-content">
+        <h3>13 תרגילים שמלווים אותך כל יום, בדיוק כשאת צריכה</h3>
+        <p>האפליקציה היא לא וידאו נוסף. היא לא קורס מחולק לטלפון. היא מרחב התרגול שלך, פתוח 24 שעות, מותאם בדיוק לרגע שבו את נמצאת.</p>
+        <p>בחרת תרגיל. הקול שלי מקדים אותך בדקה. הטיימר רץ. את עושה. בסוף, רושמת לעצמך מילה אחת על מה שקרה. זה הכל.</p>
+
+        <div class="app-features">
+          <div class="app-feature">
+            <span class="num">1</span>
+            <div>
+              <h4>3 שלבים, 13 תרגילים, קצב משלך</h4>
+              <p>סדורים בדיוק כפי שהקליניקה מלמדת: <strong>קודם לראות, אחר כך לגעת, ואז לטוות את התרגול לתוך היומיום.</strong> תרגיל אחד ביום מספיק.</p>
+            </div>
+          </div>
+          <div class="app-feature">
+            <span class="num">2</span>
+            <div>
+              <h4>מילים בלי הקלדה</h4>
+              <p>את מחזיקה תינוק. אין לך יד פנויה. <strong>תני לאפליקציה לרשום את ההשתקפות שלך בקול.</strong> עברית, ברורה, נשמרת.</p>
+            </div>
+          </div>
+          <div class="app-feature">
+            <span class="num">3</span>
+            <div>
+              <h4>זוכרת בדיוק איפה הפסקת</h4>
+              <p>שב, התינוק נרדם, חזרת. <strong>בלי לחפש, בלי לחשב מחדש איפה היית.</strong> האפליקציה ממשיכה איתך מהמקום בו עצרת.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="app-pullquote">זה כמו ההבדל בין לקרוא מדריך שחייה <em>לבין מאמן שעומד לצדך בקצה הבריכה.</em><br>הקורס הוא הידע. האפליקציה היא הליווי בפועל.</p>
+
+    <div class="app-callout">
+      <h4>למה זה משנה לך, באמת</h4>
+      <ul>
+        <li>את מתחילה לתרגל ביום הראשון, לא אחרי שתסיימי את כל השיעורים</li>
+        <li>כל תרגיל מקושר לשיעור בקורס, אז את יודעת בדיוק מה הפסיכולוגיה הקלינית שמאחורי הצעד הקטן</li>
+        <li>אין שום החלטה לקבל. את פותחת תרגיל, האפליקציה מובילה אותך מההתחלה ועד הסוף</li>
+        <li>הקול שלי איתך בכל תרגיל, גם כשאני לא יכולה להיות שם פיזית</li>
+      </ul>
+    </div>
+
+    <div class="app-included">
+      <span class="tag">כלולה בתוכנית · ללא תוספת תשלום</span>
+      <p>זה לא בונוס. זאת חצי מהתוכנית. כי בלי תרגול יומיומי, ההבנה נשארת תיאורטית. כאן, הקרבה לא רק נלמדת, היא מתורגלת.</p>
+    </div>
+
+    <div class="app-cta-wrap">
+      <a href="#register-main" class="btn">אני רוצה את התוכנית והאפליקציה</a>
     </div>
   </div>
 </section>
